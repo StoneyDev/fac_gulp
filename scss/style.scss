@@ -1,0 +1,12 @@
+$rouge: #FF0000;
+.roro {
+	display: flex;
+	color: $rouge;
+	border: 2px solid black;
+	background: aqua;
+
+	&:hover {
+		border: 2px solid azure;
+		background: floralwhite;
+	}
+}

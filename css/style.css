@@ -1,0 +1,13 @@
+.roro {
+  display: flex;
+  color: #FF0000;
+  border: 2px solid black;
+  background: aqua;
+}
+
+.roro:hover {
+  border: 2px solid azure;
+  background: floralwhite;
+}
+
+/*# sourceMappingURL=style.css.map */

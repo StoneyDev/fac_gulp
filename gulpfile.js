@@ -24,9 +24,9 @@ var rename       = require('gulp-regex-rename');
 
 // Watcher
 gulp.task('watch', function() {
-  gulp.watch(['./css/**/*.scss'], ['css'])
+  gulp.watch(['./scss/**/*.scss'], ['css'])
 	.on('change', function () {
-        notify("CSS -> SCSS ==> OK").write('');
+        notify("SCSS -> CSS ==> OK").write('');
 	});
 
   gulp.watch(['./js/a_compresser/*.js'], ['concat_minif'])
@@ -50,7 +50,7 @@ gulp.task('css', function () {
 		})(err);
 		this.emit('end');
 	};
-  return gulp.src('./css/mon_site.scss')
+  return gulp.src('./scss/style.scss')
     .pipe(plumber({errorHandler: onError}))
 	.pipe(sourcemaps.init())
     .pipe(sass({
@@ -79,7 +79,7 @@ gulp.task('concat_minif', function() {
 		.pipe(babel({
 			presets: ['env']
 		}))
-		.pipe(concat('mon_site.min.js', {newLine: ';'}))
+		.pipe(concat('style.min.js', {newLine: ';'}))
 		.pipe(uglify())
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./js'));
